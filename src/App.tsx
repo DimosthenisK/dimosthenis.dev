@@ -35,7 +35,7 @@ function App() {
             <div className="flex mt-auto">
               <div className="w-1/4">
                 <a
-                  className="bg-yellow-700 hover:bg-yellow-600 text-white font-bold py-2 px-4 border-b-4 border-yellow-800 hover:border-yellow-700 rounded block w-full text-center"
+                  className="bg-yellow-700 hover:bg-yellow-600 text-white font-bold py-2 px-4 border-b-4 border-yellow-800 hover:border-yellow-700 rounded block w-full text-center transition duration-500 ease-in-out "
                   href="mailto:dimostheniskalaitzis@gmail.com"
                 >
                   <Icon
@@ -48,7 +48,7 @@ function App() {
               </div>
               <div className="w-1/4 pl-3">
                 <a
-                  className="bg-yellow-700 hover:bg-yellow-600 text-white font-bold py-2 px-4 border-b-4 border-yellow-800 hover:border-yellow-700 rounded block w-full text-center"
+                  className="bg-yellow-700 hover:bg-yellow-600 text-white font-bold py-2 px-4 border-b-4 border-yellow-800 hover:border-yellow-700 rounded block w-full text-center transition duration-500 ease-in-out "
                   href="tel:+306984599882"
                 >
                   <Icon
@@ -61,7 +61,7 @@ function App() {
               </div>
               <div className="w-1/2 pl-3">
                 <a
-                  className="bg-yellow-700 hover:bg-yellow-600 text-white font-bold py-2 px-4 border-b-4 border-yellow-800 hover:border-yellow-700 rounded block w-full text-center"
+                  className="bg-yellow-700 hover:bg-yellow-600 text-white font-bold py-2 px-4 border-b-4 border-yellow-800 hover:border-yellow-700 rounded block w-full text-center transition duration-500 ease-in-out "
                   href="https://docs.google.com/document/d/1MbJkDGDY1mUWCq2YkYeQO2sBjmn9jls2IQNCasvXg1w/edit"
                   target="_blank"
                 >

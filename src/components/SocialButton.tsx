@@ -16,7 +16,7 @@ export const SocialButton: React.FC<props> = ({ link }) => {
       <a
         type="button"
         href={link.url}
-        className="transition duration-500 ease-in-out rounded-full hover:bg-yellow-700 transform p-3 mx-auto mt-2"
+        className="transition duration-500 ease-in-out rounded-full hover:bg-yellow-600 transform p-3 mx-auto mt-2"
         target="_blank"
       >
         <Icon path={link.icon} size={1.5} color="white"></Icon>
