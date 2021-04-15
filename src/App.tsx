@@ -1,3 +1,5 @@
+import { mdiDownload, mdiEmail, mdiPhone } from "@mdi/js";
+import Icon from "@mdi/react";
 import React from "react";
 import "./App.css";
 import { Card } from "./components";
@@ -32,19 +34,44 @@ function App() {
             </blockquote>
             <div className="flex mt-auto">
               <div className="w-1/4">
-                <button className="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded block w-full">
-                  Button
-                </button>
+                <a
+                  className="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded block w-full text-center"
+                  href="mailto:dimostheniskalaitzis@gmail.com"
+                >
+                  <Icon
+                    path={mdiEmail}
+                    size={1.3}
+                    className="inline pr-2"
+                  ></Icon>
+                  Email
+                </a>
               </div>
               <div className="w-1/4 pl-3">
-                <button className="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded block w-full">
-                  Button
-                </button>
+                <a
+                  className="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded block w-full text-center"
+                  href="tel:+306984599882"
+                >
+                  <Icon
+                    path={mdiPhone}
+                    size={1.3}
+                    className="inline pr-2"
+                  ></Icon>
+                  Phone
+                </a>
               </div>
               <div className="w-1/2 pl-3">
-                <button className="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded block w-full">
-                  Button
-                </button>
+                <a
+                  className="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded block w-full text-center"
+                  href="https://docs.google.com/document/d/1MbJkDGDY1mUWCq2YkYeQO2sBjmn9jls2IQNCasvXg1w/edit"
+                  target="_blank"
+                >
+                  <Icon
+                    path={mdiDownload}
+                    size={1.3}
+                    className="inline pr-2"
+                  ></Icon>
+                  Download CV
+                </a>
               </div>
             </div>
           </div>
