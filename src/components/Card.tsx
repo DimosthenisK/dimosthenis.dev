@@ -44,11 +44,9 @@ export const Card: React.FC<{}> = ({ children }) => {
   ];
 
   return (
-    <div className="self-center mx-auto bg-white w-1/2 h-3/6 m-10 antialiased">
-      <div className="h-5/6 w-full bg-yellow-400 py-10 px-5 flex">
-        {children}
-      </div>
-      <div className="h-1/6 w-full bg-yellow-800">
+    <div className="self-center mx-auto bg-white w-1/2 h-3/6 m-10 antialiased shadow-ld">
+      <div className="h-5/6 w-full py-10 px-5 flex">{children}</div>
+      <div className="h-1/6 w-full bg-yellow-700">
         <CardFooter links={links}></CardFooter>
       </div>
     </div>
