@@ -1,3 +1,10 @@
+import {
+  mdiFacebook,
+  mdiGithub,
+  mdiInstagram,
+  mdiLinkedin,
+  mdiTwitter,
+} from "@mdi/js";
 import React from "react";
 import { CardFooter } from "./";
 import "./Card.css";
@@ -5,22 +12,34 @@ import "./Card.css";
 export const Card: React.FC<{}> = ({ children }) => {
   const links = [
     {
-      url: "https://linkedin.com",
+      url: "https://www.linkedin.com/in/dimostheniskalaitzis/",
       slug: "linkedin",
       title: "LinkedIn",
-      icon: "",
+      icon: mdiLinkedin,
     },
     {
-      url: "https://linkedin.com",
-      slug: "linkedin",
-      title: "LinkedIn",
-      icon: "",
+      url: "https://github.com/dimosthenisk",
+      slug: "github",
+      title: "Github",
+      icon: mdiGithub,
     },
     {
-      url: "https://linkedin.com",
-      slug: "linkedin",
-      title: "LinkedIn",
-      icon: "",
+      url: "https://www.instagram.com/__dimosthenis__/",
+      slug: "instagram",
+      title: "Instagram",
+      icon: mdiInstagram,
+    },
+    {
+      url: "https://www.facebook.com/Zhmos12",
+      slug: "facebook",
+      title: "Facebook",
+      icon: mdiFacebook,
+    },
+    {
+      url: "https://twitter.com/DimosthenisK12",
+      slug: "twitter",
+      title: "Twitter",
+      icon: mdiTwitter,
     },
   ];
 
