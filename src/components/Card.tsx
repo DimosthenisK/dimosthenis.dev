@@ -44,7 +44,7 @@ export const Card: React.FC<{}> = ({ children }) => {
   ];
 
   return (
-    <div className="self-center mx-auto bg-white xl2:w-1/3 xl2:h-2/5 xl:w-1/2 xl:h-1/2 l2:w-8/12 l2:h-3/5 l:w-8/12 l:h-1/2 m:w-10/12 m:h-4/6 sm:w-11/12 sm:h-full antialiased shadow-ld">
+    <div className="self-center mx-auto bg-white xl2:w-5/12 xl2:h-2/5 xl:w-1/2 xl:h-1/2 l2:w-8/12 l2:h-3/6 l:w-8/12 l:h-1/2 m:w-10/12 m:h-1/2 sm:w-11/12 sm:h-4/6 antialiased shadow-ld">
       <div className="h-5/6 xs:h-full w-full py-10 px-5 flex flex-row xs:flex-col">
         {children}
       </div>
