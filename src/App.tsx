@@ -9,10 +9,10 @@ function App() {
   return (
     <Layout>
       <Card>
-        <div className="w-4/12 h-full inline-block">
+        <div className="w-4/12 sm:w-full xs:w-full h-full inline-block">
           <img src="/me.png" className="px-5 w-full h-full"></img>
         </div>
-        <div className="w-8/12 h-full inline-block">
+        <div className="w-8/12 sm:w-full xs:w-full h-full inline-block">
           <div className="flex flex-col h-full">
             <h1 className="text-4xl">
               I'm <span className="font-bold">Dimosthenis Kalaitzis</span>
