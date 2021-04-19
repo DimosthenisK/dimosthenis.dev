@@ -27,19 +27,19 @@ function App() {
           <div className="w-4/12 sm:w-full xs:w-full h-full inline-block">
             <img
               src="/me.png"
-              className="px-5 w-full h-full"
+              className="px-5 xs:px-0 w-full h-full"
               alt="Profile"
             ></img>
           </div>
           <div className="w-8/12 sm:w-full xs:w-full h-full inline-block">
             <div className="flex flex-col h-full">
-              <h1 className="text-4xl">
+              <h1 className="text-4xl xs:text-2xl">
                 I'm <span className="font-bold">Dimosthenis Kalaitzis</span>
               </h1>
-              <h2 className="text-xl">
+              <h2 className="text-xl xs:text-base">
                 Senior Software Engineer & Systems Designer
               </h2>
-              <h3 className="text-md">
+              <h3 className="text-md xs:text-sm">
                 Currently working for{" "}
                 <a href="https://sourcestrike.com">SourceStrike</a>
               </h3>
@@ -52,22 +52,22 @@ function App() {
                 and efficient web development. Team player with leading
                 abilities.
               </blockquote>
-              <div className="flex mt-auto">
-                <div className="w-1/4">
+              <div className="flex mt-auto xs:flex-col">
+                <div className="w-1/4 xs:w-full xs:pl-0 xs:my-1">
                   <Button
                     url="mailto:dimostheniskalaitzis@gmail.com"
                     icon={mdiEmail}
                     label="Email"
                   ></Button>
                 </div>
-                <div className="w-1/4 pl-3">
+                <div className="w-1/4 pl-3 xs:w-full xs:pl-0 xs:my-1">
                   <Button
                     url="tel:+306984599882"
                     icon={mdiPhone}
                     label="Phone"
                   ></Button>
                 </div>
-                <div className="w-1/2 pl-3">
+                <div className="w-1/2 pl-3 xs:w-full xs:pl-0 xs:my-1">
                   <Button
                     url="https://docs.google.com/document/d/1MbJkDGDY1mUWCq2YkYeQO2sBjmn9jls2IQNCasvXg1w/edit"
                     icon={mdiDownload}

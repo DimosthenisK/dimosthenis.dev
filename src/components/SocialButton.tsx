@@ -13,7 +13,7 @@ interface props {
 
 export const SocialButton: React.FC<props> = ({ link }) => {
   return (
-    <li className="inline-block mx-5 my-15">
+    <li className="inline-block mx-5 xs:mx-0 my-15">
       <ReactGA.OutboundLink
         eventLabel="click"
         to={link.url}
