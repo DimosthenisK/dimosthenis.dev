@@ -10,6 +10,8 @@ ReactGA.initialize("UA-185250785-1", {
   titleCase: false,
 });
 
+ReactGA.pageview(window.location.pathname + window.location.search);
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
