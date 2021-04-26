@@ -18,7 +18,7 @@ export const CardFooter: React.FC<props> = ({ links, children }) => {
         style={{ verticalAlign: "baseline" }}
       >
         {links.map((link) => (
-          <SocialButton link={link}></SocialButton>
+          <SocialButton link={link} key={link.slug}></SocialButton>
         ))}
       </ul>
     </div>
