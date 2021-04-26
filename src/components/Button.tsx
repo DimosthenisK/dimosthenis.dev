@@ -20,7 +20,7 @@ export const Button: React.FC<props> = ({ icon, label, url }) => {
         <Icon
           path={(icon as unknown) as string}
           size={1.3}
-          className="inline pr-2"
+          className="inline pr-2 m:hidden"
         ></Icon>
       ) : (
         <></>
