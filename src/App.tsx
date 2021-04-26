@@ -6,21 +6,28 @@ import { Button, ButtonGroup, Card } from "./components";
 import { BaseLayout as Layout } from "./layouts";
 
 function App() {
+  const name = "Dimosthenis Kalaitzis";
+  const workTitle = "Senior Software Engineer & Systems Designer";
+  const description =
+    "Experienced Web/Software Developer with a demonstrated history of working in the computer software industry. Skilled in the Javascript stack on both frontend and backend, with great knowledge of Typescript and a plethora of frameworks for fast and efficient web development. Team player with leading abilities.";
+
+  const currentWork = {
+    url: "https://sourcestrike.com",
+    label: "SourceStrike",
+  };
+
+  const contact = {
+    phone: "+306984599882",
+    mail: "dimostheniskalaitzis@gmail.com",
+  };
+
   return (
     <React.Fragment>
       <Helmet>
         <title>
-          Dimosthenis Kalaitzis - Senior Software Engineer & Systems Designer
+          {name} - {workTitle}
         </title>
-        <meta
-          name="description"
-          content="Experienced Web/Software Developer with a demonstrated history
-                of working in the computer software industry. Skilled in the
-                Javascript stack on both frontend and backend, with great
-                knowledge of Typescript and a plethora of frameworks for fast
-                and efficient web development. Team player with leading
-                abilities."
-        />
+        <meta name="description" content={description} />
         <meta name="theme-color" content="#b45309" />
         <link
           rel="icon"
@@ -39,36 +46,29 @@ function App() {
           <div className="w-8/12 sm:w-full xs:w-full h-full inline-block">
             <div className="flex flex-col h-full">
               <h1 className="text-4xl xs:text-2xl">
-                I'm <span className="font-bold">Dimosthenis Kalaitzis</span>
+                I'm <span className="font-bold">{name}</span>
               </h1>
-              <h2 className="text-xl xs:text-base">
-                Senior Software Engineer & Systems Designer
-              </h2>
+              <h2 className="text-xl xs:text-base">{workTitle}</h2>
               <h3 className="text-md xs:text-sm">
                 Currently working for{" "}
-                <a href="https://sourcestrike.com">SourceStrike</a>
+                <a href={currentWork.url}>{currentWork.label}</a>
               </h3>
               <hr className="border-black my-5 sm:my-2 xs:my-2"></hr>
               <blockquote className="text-justify  flex-grow">
-                Experienced Web/Software Developer with a demonstrated history
-                of working in the computer software industry. Skilled in the
-                Javascript stack on both frontend and backend, with great
-                knowledge of Typescript and a plethora of frameworks for fast
-                and efficient web development. Team player with leading
-                abilities.
+                {description}
               </blockquote>
               <div className="flex mt-2 xs:flex-col sm:flex-col">
                 <ButtonGroup label="Contact Me">
                   <div className="w-1/2 xs:w-full sm:w-full xs:pr-1 xs:my-1 sm:pr-1 sm:my-1">
                     <Button
-                      url="mailto:dimostheniskalaitzis@gmail.com"
+                      url={`mailto:${contact.mail}`}
                       icon={mdiEmail}
                       label="Email"
                     ></Button>
                   </div>
                   <div className="w-1/2 pl-3 xs:w-full xs:pl-1 xs:my-1 sm:w-full sm:pl-1 sm:my-1">
                     <Button
-                      url="tel:+306984599882"
+                      url={`tel:${contact.phone}`}
                       icon={mdiPhone}
                       label="Phone"
                     ></Button>
