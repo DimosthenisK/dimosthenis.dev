@@ -58,7 +58,7 @@ function App() {
                 {description}
               </blockquote>
               <div className="flex mt-2 xs:flex-col sm:flex-col">
-                <ButtonGroup label="Contact Me" extraClasses={["pr-1"]}>
+                <ButtonGroup label="Contact Me" extraClasses={["mr-1"]}>
                   <div className="w-1/2 pr-1 xs:w-full sm:w-full xs:pr-1 xs:my-1 sm:pr-1 sm:my-1">
                     <Button
                       url={`mailto:${contact.mail}`}
@@ -75,7 +75,7 @@ function App() {
                   </div>
                 </ButtonGroup>
 
-                <ButtonGroup label="View More" extraClasses={["pl-1"]}>
+                <ButtonGroup label="View More" extraClasses={["ml-1"]}>
                   <div className="w-1/2 pr-1 xs:w-full xs:pr-1 xs:my-1 sm:w-full sm:pl-1 sm:my-1">
                     <Button
                       url="https://blog.dimosthenis.dev"
