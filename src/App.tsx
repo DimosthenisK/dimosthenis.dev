@@ -59,14 +59,14 @@ function App() {
               </blockquote>
               <div className="flex mt-2 xs:flex-col sm:flex-col">
                 <ButtonGroup label="Contact Me">
-                  <div className="w-1/2 xs:w-full sm:w-full xs:pr-1 xs:my-1 sm:pr-1 sm:my-1">
+                  <div className="w-1/2 pr-1 xs:w-full sm:w-full xs:pr-1 xs:my-1 sm:pr-1 sm:my-1">
                     <Button
                       url={`mailto:${contact.mail}`}
                       icon={mdiEmail}
                       label="Email"
                     ></Button>
                   </div>
-                  <div className="w-1/2 pl-3 xs:w-full xs:pl-1 xs:my-1 sm:w-full sm:pl-1 sm:my-1">
+                  <div className="w-1/2 pl-1 xs:w-full xs:pl-1 xs:my-1 sm:w-full sm:pl-1 sm:my-1">
                     <Button
                       url={`tel:${contact.phone}`}
                       icon={mdiPhone}
@@ -76,14 +76,14 @@ function App() {
                 </ButtonGroup>
 
                 <ButtonGroup label="View More">
-                  <div className="w-1/2 xs:w-full xs:pr-1 xs:my-1 sm:w-full sm:pl-1 sm:my-1">
+                  <div className="w-1/2 pr-1 xs:w-full xs:pr-1 xs:my-1 sm:w-full sm:pl-1 sm:my-1">
                     <Button
                       url="https://blog.dimosthenis.dev"
                       icon={mdiPen}
                       label="Blog"
                     ></Button>
                   </div>
-                  <div className="w-1/2 pl-3 xs:w-full xs:pl-1 xs:my-1 sm:w-full sm:pr-1 sm:my-1">
+                  <div className="w-1/2 pl-1 xs:w-full xs:pl-1 xs:my-1 sm:w-full sm:pr-1 sm:my-1">
                     <Button
                       url="https://docs.google.com/document/d/1MbJkDGDY1mUWCq2YkYeQO2sBjmn9jls2IQNCasvXg1w/edit"
                       icon={mdiDownload}
