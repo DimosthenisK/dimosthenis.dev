@@ -24,7 +24,7 @@ export const Card: React.FC<{}> = ({ children }) => {
       icon: mdiGithub,
     },
     {
-      url: "https://www.instagram.com/__dimosthenis__/",
+      url: "https://www.instagram.com/dimosthenisk12/",
       slug: "instagram",
       title: "Instagram",
       icon: mdiInstagram,
