@@ -12,12 +12,12 @@ function App() {
     "Experienced Web/Software Developer with a demonstrated history of working in the computer software industry. Skilled in the Javascript stack on both frontend and backend, with great knowledge of Typescript and a plethora of frameworks for fast and efficient web development. Team player with leading abilities.";
 
   const currentWork = {
-    url: "https://sourcestrike.com",
-    label: "SourceStrike",
+    url: "https://tminusventures.com/",
+    label: "TMinus Ventures",
   };
 
   const contact = {
-    phone: "+306984599882",
+    phone: "+306946909170",
     mail: "dimostheniskalaitzis@gmail.com",
   };
 
