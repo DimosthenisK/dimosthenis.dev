@@ -12,8 +12,8 @@ function App() {
     "Experienced Web/Software Developer with a demonstrated history of working in the computer software industry. Skilled in the Javascript stack on both frontend and backend, with great knowledge of Typescript and a plethora of frameworks for fast and efficient web development. Team player with leading abilities.";
 
   const currentWork = {
-    url: "https://tminusventures.com/",
-    label: "TMinus Ventures",
+    url: "https://finio.com/",
+    label: "Finio Inc.",
   };
 
   const contact = {
