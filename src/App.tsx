@@ -22,7 +22,7 @@ const description =
 
 const currentWork = {
   url: "https://finio.com/",
-  label: "Finio Inc.",
+  label: "Finio Inc",
 };
 
 const company = {

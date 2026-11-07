@@ -443,7 +443,7 @@ a {
   }
 
   .hero__media::after {
-    background: linear-gradient(0deg, rgba(232, 238, 241, 0.96), transparent 42%);
+    background: none;
   }
 
   .stack-rail {
@@ -456,6 +456,7 @@ a {
     border-left: 0;
     border-top: 1px solid var(--line);
     box-shadow: none;
+    background: #eef3f5;
   }
 
   .stack-rail__viewport {
