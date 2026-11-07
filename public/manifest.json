@@ -1,6 +1,6 @@
 {
   "short_name": "dimosthenis.dev",
-  "name": "Dimosthenis Kalaitzis Landing",
+  "name": "Dimosthenis Kalaitzis",
   "icons": [
     {
       "src": "favicon.ico",
@@ -10,6 +10,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#b45309",
-  "background_color": "#ffffff"
+  "theme_color": "#141816",
+  "background_color": "#eceae4"
 }
