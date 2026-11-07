@@ -11,6 +11,7 @@ import React from "react";
 import ReactGA from "react-ga";
 import { Helmet } from "react-helmet";
 import "./App.css";
+import { StackRail } from "./StackRail";
 
 const name = "Dimosthenis Kalaitzis";
 const workTitle = "Senior Software Engineer & Systems Designer";
@@ -166,14 +167,17 @@ function App() {
             </ul>
           </div>
 
-          <div className="hero__media" aria-hidden="false">
-            <img
-              className="hero__photo"
-              src="/me.jpg"
-              alt={`${name} at Rhine Falls`}
-              width={1440}
-              height={1939}
-            />
+          <div className="hero__visual">
+            <div className="hero__media">
+              <img
+                className="hero__photo"
+                src="/me.jpg"
+                alt={`${name} at Rhine Falls`}
+                width={1440}
+                height={1939}
+              />
+            </div>
+            <StackRail />
           </div>
         </section>
       </main>

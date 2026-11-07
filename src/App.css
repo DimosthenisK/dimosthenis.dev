@@ -60,10 +60,16 @@ a {
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.15fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
   min-height: 100vh;
-  width: min(100%, 1480px);
+  width: min(100%, 1560px);
   margin: 0 auto;
+}
+
+.hero__visual {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 5.25rem;
+  min-height: 100vh;
 }
 
 .hero__copy {
@@ -216,8 +222,107 @@ a {
 .hero__media {
   position: relative;
   overflow: hidden;
-  min-height: 100vh;
+  min-height: 100%;
   background: #1a2228;
+}
+
+.stack-rail {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  border-left: 1px solid var(--line);
+  background:
+    linear-gradient(180deg, rgba(232, 238, 241, 0.35), transparent 18%, transparent 82%, rgba(232, 238, 241, 0.55)),
+    var(--paper);
+}
+
+.stack-rail__viewport {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    #000 12%,
+    #000 88%,
+    transparent 100%
+  );
+}
+
+.stack-rail__track {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  animation: stackRollY 36s linear infinite;
+}
+
+.stack-rail__list {
+  list-style: none;
+  margin: 0;
+  padding: 1.25rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.35rem;
+}
+
+.stack-rail__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  width: 100%;
+  color: var(--accent);
+}
+
+.stack-rail__item img,
+.stack-rail__svg {
+  width: 1.7rem;
+  height: 1.7rem;
+  display: block;
+  opacity: 0.92;
+  filter: drop-shadow(0 1px 0 rgba(255, 255, 255, 0.35));
+}
+
+.stack-rail__svg {
+  color: var(--accent);
+}
+
+.stack-rail__svg svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.stack-rail__label {
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  text-align: center;
+  line-height: 1.1;
+  max-width: 4.6rem;
+}
+
+@keyframes stackRollY {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes stackRollX {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 .hero__photo {
@@ -287,9 +392,14 @@ a {
     width: 100%;
   }
 
-  .hero__media {
+  .hero__visual {
     order: -1;
-    min-height: min(58vh, 560px);
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  .hero__media {
+    min-height: min(52vh, 520px);
   }
 
   .hero__photo {
@@ -298,6 +408,53 @@ a {
 
   .hero__media::after {
     background: linear-gradient(0deg, rgba(232, 238, 241, 0.96), transparent 42%);
+  }
+
+  .stack-rail {
+    border-left: 0;
+    border-top: 1px solid var(--line);
+    min-height: 4.75rem;
+    background:
+      linear-gradient(90deg, rgba(232, 238, 241, 0.9), transparent 12%, transparent 88%, rgba(232, 238, 241, 0.9)),
+      var(--paper);
+  }
+
+  .stack-rail__viewport {
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      #000 8%,
+      #000 92%,
+      transparent 100%
+    );
+  }
+
+  .stack-rail__track {
+    flex-direction: row;
+    width: max-content;
+    height: 100%;
+    animation: stackRollX 32s linear infinite;
+  }
+
+  .stack-rail__list {
+    flex-direction: row;
+    padding: 0.85rem 1rem;
+    gap: 1.5rem;
+    height: 100%;
+  }
+
+  .stack-rail__item {
+    flex-direction: row;
+    width: auto;
+    gap: 0.55rem;
+    white-space: nowrap;
+  }
+
+  .stack-rail__label {
+    font-size: 0.72rem;
+    max-width: none;
+    text-transform: none;
+    letter-spacing: 0.01em;
   }
 
   .hero__copy {
@@ -317,7 +474,8 @@ a {
 
 @media (prefers-reduced-motion: reduce) {
   .rise,
-  .hero__photo {
+  .hero__photo,
+  .stack-rail__track {
     animation: none !important;
     opacity: 1;
     transform: none;
