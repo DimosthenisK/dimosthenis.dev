@@ -15,13 +15,18 @@ import "./App.css";
 const name = "Dimosthenis Kalaitzis";
 const workTitle = "Senior Software Engineer & Systems Designer";
 const blurb =
-  "I build product systems end-to-end on the JavaScript stack — TypeScript, web, and the glue that ships.";
+  "I build product systems end-to-end on the JavaScript stack - TypeScript, web, and the glue that ships. Need help on a project? Work with me through Anode Software.";
 const description =
-  "Experienced software engineer with a focus on TypeScript systems across frontend and backend. Currently at Finio Inc.";
+  "Senior software engineer focused on TypeScript systems across frontend and backend. Hire me for client work through Anode Software.";
 
 const currentWork = {
   url: "https://finio.com/",
   label: "Finio Inc.",
+};
+
+const company = {
+  url: "https://anodesoftware.com/",
+  label: "Anode Software",
 };
 
 const contact = {
@@ -43,8 +48,8 @@ const actions = [
     primary: true,
   },
   {
-    label: "Blog",
-    href: "https://blog.dimosthenis.dev",
+    label: "Anode Software",
+    href: company.url,
     icon: mdiOpenInNew,
     primary: false,
   },
@@ -78,7 +83,7 @@ function App() {
     <>
       <Helmet>
         <title>
-          {name} — {workTitle}
+          {name} - {workTitle}
         </title>
         <meta name="description" content={description} />
         <meta name="theme-color" content="#12161a" />
@@ -105,6 +110,16 @@ function App() {
               >
                 {currentWork.label}
               </a>
+              . Client projects via{" "}
+              <a
+                href={company.url}
+                target="_blank"
+                rel="noreferrer"
+                onClick={() => track("Anode Software")}
+              >
+                {company.label}
+              </a>
+              .
             </p>
 
             <div className="hero__actions rise rise--6">
@@ -113,7 +128,9 @@ function App() {
                 return (
                   <a
                     key={action.label}
-                    className={action.primary ? "btn btn--primary" : "btn btn--ghost"}
+                    className={
+                      action.primary ? "btn btn--primary" : "btn btn--ghost"
+                    }
                     href={action.href}
                     {...(newTab
                       ? { target: "_blank", rel: "noreferrer" }

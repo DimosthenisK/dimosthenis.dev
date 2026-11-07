@@ -107,7 +107,7 @@ a {
   font-size: clamp(1rem, 1.35vw, 1.125rem);
   line-height: 1.65;
   color: var(--ink-soft);
-  max-width: 34ch;
+  max-width: 42ch;
 }
 
 .hero__now {
