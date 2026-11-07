@@ -176,7 +176,6 @@ function App() {
               height={1939}
             />
           </div>
-          <div className="hero__gap" aria-hidden="true" />
           <StackRail />
         </section>
       </main>

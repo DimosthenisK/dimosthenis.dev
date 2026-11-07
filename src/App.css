@@ -60,18 +60,27 @@ a {
   height: 100%;
   height: 100dvh;
   overflow: hidden;
+  /* Left-right page gutters - centered composition, not full-bleed */
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  padding: 1.25rem clamp(1rem, 4.5vw, 3.5rem);
+  box-sizing: border-box;
 }
 
 .hero {
   display: grid;
-  /* copy | photo (fills) | gap | rail AFTER photo */
-  grid-template-columns: minmax(18rem, 36vw) minmax(0, 1fr) 0.65rem var(--rail-width);
+  /* copy | photo | rail after photo - same split feel as before the rail */
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr) var(--rail-width);
   grid-template-rows: 100%;
-  width: 100%;
+  width: min(100%, 1480px);
   height: 100%;
-  max-height: 100dvh;
-  margin: 0;
+  max-height: 100%;
+  margin: 0 auto;
   overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  box-shadow: 0 18px 50px rgba(18, 22, 26, 0.08);
 }
 
 .hero__copy {
@@ -257,13 +266,6 @@ a {
     linear-gradient(0deg, rgba(18, 22, 26, 0.1), transparent 34%);
 }
 
-.hero__gap {
-  min-width: 0;
-  height: 100%;
-  background: var(--paper);
-  border-left: 1px solid var(--line);
-}
-
 /* Rail sits in its own grid column AFTER the photo - never overlays it */
 .stack-rail {
   position: relative;
@@ -277,7 +279,7 @@ a {
   min-height: 0;
   height: 100%;
   background: #eef3f5;
-  box-shadow: inset 1px 0 0 var(--line);
+  border-left: 1px solid var(--line);
 }
 
 .stack-rail__viewport {
@@ -418,18 +420,19 @@ a {
     height: auto;
     min-height: 100dvh;
     overflow: visible;
+    display: block;
+    padding: 0;
   }
 
   .hero {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
+    width: 100%;
     height: auto;
     max-height: none;
     overflow: visible;
-  }
-
-  .hero__gap {
-    display: none;
+    border: 0;
+    box-shadow: none;
   }
 
   .hero__media {
