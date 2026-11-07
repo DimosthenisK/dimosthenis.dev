@@ -81,10 +81,10 @@ function App() {
           {name} — {workTitle}
         </title>
         <meta name="description" content={description} />
-        <meta name="theme-color" content="#141816" />
+        <meta name="theme-color" content="#12161a" />
         <link
           rel="icon"
-          href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23141816'/%3E%3Ctext x='50%25' y='54%25' text-anchor='middle' font-size='34' font-family='Georgia, serif' fill='%23e09a3e'%3ED%3C/text%3E%3C/svg%3E"
+          href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2312161a'/%3E%3Ctext x='50%25' y='54%25' text-anchor='middle' font-size='34' font-family='Georgia, serif' fill='%235f8f8a'%3ED%3C/text%3E%3C/svg%3E"
         />
       </Helmet>
 
@@ -152,10 +152,10 @@ function App() {
           <div className="hero__media" aria-hidden="false">
             <img
               className="hero__photo"
-              src="/me.png"
-              alt={`${name} outdoors at golden hour`}
-              width={960}
-              height={1200}
+              src="/me.jpg"
+              alt={`${name} at Rhine Falls`}
+              width={1440}
+              height={1939}
             />
           </div>
         </section>
