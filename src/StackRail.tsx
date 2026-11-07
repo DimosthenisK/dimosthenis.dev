@@ -37,6 +37,9 @@ const stack: StackItem[] = [
   { slug: "sentry", label: "Sentry" },
 ];
 
+/** Two identical sequences in one flex track = seamless -50% loop with only item gaps. */
+const loop = [...stack, ...stack];
+
 function iconUrl(slug: string) {
   return `https://cdn.simpleicons.org/${slug}/${ACCENT}`;
 }
@@ -51,26 +54,9 @@ function StackMark({ item }: { item: StackItem }) {
       alt=""
       width={28}
       height={28}
-      loading="lazy"
+      loading="eager"
       decoding="async"
     />
-  );
-}
-
-function StackList({ id }: { id: string }) {
-  return (
-    <ul className="stack-rail__list" aria-hidden={id !== "a"}>
-      {stack.map((item) => (
-        <li
-          key={`${id}-${item.slug}`}
-          className="stack-rail__item"
-          title={item.label}
-        >
-          <StackMark item={item} />
-          <span className="stack-rail__label">{item.label}</span>
-        </li>
-      ))}
-    </ul>
   );
 }
 
@@ -78,10 +64,19 @@ export function StackRail() {
   return (
     <aside className="stack-rail" aria-label="Technologies I use">
       <div className="stack-rail__viewport">
-        <div className="stack-rail__track">
-          <StackList id="a" />
-          <StackList id="b" />
-        </div>
+        <ul className="stack-rail__track">
+          {loop.map((item, index) => (
+            <li
+              key={`${item.slug}-${index}`}
+              className="stack-rail__item"
+              title={item.label}
+              aria-hidden={index >= stack.length}
+            >
+              <StackMark item={item} />
+              <span className="stack-rail__label">{item.label}</span>
+            </li>
+          ))}
+        </ul>
       </div>
     </aside>
   );
