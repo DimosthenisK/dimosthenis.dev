@@ -60,16 +60,11 @@ a {
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+  /* copy | photo | stack rail (rail is a fixed column after the photo) */
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr) 6.75rem;
   min-height: 100vh;
-  width: min(100%, 1560px);
+  width: min(100%, 1600px);
   margin: 0 auto;
-}
-
-.hero__visual {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 5.25rem;
-  min-height: 100vh;
 }
 
 .hero__copy {
@@ -222,18 +217,23 @@ a {
 .hero__media {
   position: relative;
   overflow: hidden;
-  min-height: 100%;
+  min-height: 100vh;
   background: #1a2228;
 }
 
 .stack-rail {
   position: relative;
+  z-index: 2;
   display: flex;
   align-items: stretch;
   justify-content: center;
+  width: 6.75rem;
+  min-width: 6.75rem;
+  max-width: 6.75rem;
+  min-height: 100vh;
   border-left: 1px solid var(--line);
   background:
-    linear-gradient(180deg, rgba(232, 238, 241, 0.35), transparent 18%, transparent 82%, rgba(232, 238, 241, 0.55)),
+    linear-gradient(180deg, rgba(232, 238, 241, 0.55), transparent 14%, transparent 86%, rgba(232, 238, 241, 0.7)),
     var(--paper);
 }
 
@@ -245,8 +245,8 @@ a {
   mask-image: linear-gradient(
     to bottom,
     transparent 0%,
-    #000 12%,
-    #000 88%,
+    #000 8%,
+    #000 92%,
     transparent 100%
   );
 }
@@ -254,14 +254,16 @@ a {
 .stack-rail__track {
   display: flex;
   flex-direction: column;
+  gap: 0;
   width: 100%;
-  animation: stackRollY 36s linear infinite;
+  animation: stackRollY 48s linear infinite;
 }
 
 .stack-rail__list {
   list-style: none;
   margin: 0;
-  padding: 1.25rem 0;
+  /* No padding between the two duplicated lists — only item gap + matching end spacing */
+  padding: 0 0 1.35rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -297,14 +299,16 @@ a {
 }
 
 .stack-rail__label {
-  font-size: 0.58rem;
+  font-size: 0.62rem;
   font-weight: 600;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--ink-soft);
   text-align: center;
-  line-height: 1.1;
-  max-width: 4.6rem;
+  line-height: 1.15;
+  max-width: 5.6rem;
+  overflow: visible;
+  word-break: break-word;
 }
 
 @keyframes stackRollY {
@@ -392,13 +396,8 @@ a {
     width: 100%;
   }
 
-  .hero__visual {
-    order: -1;
-    grid-template-columns: 1fr;
-    min-height: 0;
-  }
-
   .hero__media {
+    order: -1;
     min-height: min(52vh, 520px);
   }
 
@@ -411,11 +410,15 @@ a {
   }
 
   .stack-rail {
+    order: 2;
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+    min-height: 4.75rem;
     border-left: 0;
     border-top: 1px solid var(--line);
-    min-height: 4.75rem;
     background:
-      linear-gradient(90deg, rgba(232, 238, 241, 0.9), transparent 12%, transparent 88%, rgba(232, 238, 241, 0.9)),
+      linear-gradient(90deg, rgba(232, 238, 241, 0.95), transparent 10%, transparent 90%, rgba(232, 238, 241, 0.95)),
       var(--paper);
   }
 
@@ -423,8 +426,8 @@ a {
     mask-image: linear-gradient(
       to right,
       transparent 0%,
-      #000 8%,
-      #000 92%,
+      #000 6%,
+      #000 94%,
       transparent 100%
     );
   }
@@ -433,12 +436,14 @@ a {
     flex-direction: row;
     width: max-content;
     height: 100%;
-    animation: stackRollX 32s linear infinite;
+    animation: stackRollX 40s linear infinite;
   }
 
   .stack-rail__list {
     flex-direction: row;
-    padding: 0.85rem 1rem;
+    /* End padding equals gap so the duplicated lists join seamlessly */
+    padding: 0.85rem 0;
+    padding-inline-end: 1.5rem;
     gap: 1.5rem;
     height: 100%;
   }
@@ -458,6 +463,7 @@ a {
   }
 
   .hero__copy {
+    order: 1;
     padding-top: 1.5rem;
     padding-bottom: 2.5rem;
   }

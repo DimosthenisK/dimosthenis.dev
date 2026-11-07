@@ -167,18 +167,16 @@ function App() {
             </ul>
           </div>
 
-          <div className="hero__visual">
-            <div className="hero__media">
-              <img
-                className="hero__photo"
-                src="/me.jpg"
-                alt={`${name} at Rhine Falls`}
-                width={1440}
-                height={1939}
-              />
-            </div>
-            <StackRail />
+          <div className="hero__media">
+            <img
+              className="hero__photo"
+              src="/me.jpg"
+              alt={`${name} at Rhine Falls`}
+              width={1440}
+              height={1939}
+            />
           </div>
+          <StackRail />
         </section>
       </main>
     </>
