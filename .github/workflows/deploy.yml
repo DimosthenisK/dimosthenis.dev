@@ -1,8 +1,10 @@
 # Copy to .github/workflows/deploy.yml in the app repo.
 # Replace STACK_NAME with the homeserver compose project name (folder under stacks/).
 #
-# Required repo secret:
-#   DEPLOY_WEBHOOK_TOKEN — same value as /var/lib/docker-stacks-env/deploy-webhook.token
+# Required repo secrets:
+#   DEPLOY_WEBHOOK_TOKEN — homeserver compose pull
+#   CLOUDFLARE_API_TOKEN — Cloudflare Pages Edit (public origin; survives home WAN)
+#   CLOUDFLARE_ACCOUNT_ID — 2585a0ec0c762c13c15c3d640167ed1a
 #
 # Permissions: packages:write (GHCR). GITHUB_TOKEN is enough for same-repo packages.
 
@@ -80,3 +82,30 @@ jobs:
           curl -fsS -X POST \
             -H "Authorization: Bearer ${DEPLOY_WEBHOOK_TOKEN}" \
             "https://deploy.dimosthenis.dev/deploy/${STACK_NAME}"
+
+  pages:
+    name: Cloudflare Pages (public origin)
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 16
+          cache: yarn
+      - run: yarn install --frozen-lockfile
+      - run: yarn build
+      - name: Publish to Cloudflare Pages
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          if [ -z "${CLOUDFLARE_API_TOKEN:-}" ] || [ -z "${CLOUDFLARE_ACCOUNT_ID:-}" ]; then
+            echo "Skipping Pages (set CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID repo secrets)"
+            exit 0
+          fi
+          npx --yes wrangler@4 pages deploy build \
+            --project-name dimosthenis-dev \
+            --commit-dirty=true
+
